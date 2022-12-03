@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaft.or/extras/spring-security">
+    <head th:replace="/fragment/head :: head"> </head>
+    <body>
+        <header th:replace="/fragment/navbar :: header"> </header>
+        <div>Error</div>
+        <a class="navbar-brand" th:text="'Error ' + ${codigo}">MG ARGENTINA</a>
+        <p class="mensaje" th:text="${mensaje}"></p>  
+        <section class="text-center container">
+            <div class="row mt-3">
+                <div class="divVolver">
+                    <a th:href="@{/inicio}" class="btn btn-secondary my-2 botonVolver botones">Volver</a>
+                </div>
+            </div>
+        </section>
+        <div th:replace = "/fragment/boots :: div"></div>
+    </body>
+</html>

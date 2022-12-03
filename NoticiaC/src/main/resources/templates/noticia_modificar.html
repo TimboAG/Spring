@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaft.or/extras/spring-security">
+    <head th:replace="/fragment/head :: head"> </head>
+    <body>
+        <header th:replace="/fragment/navbar :: header"> </header>
+        <div class="card">
+            <div class="card-header">
+                <header>
+                    <div class="contenido">
+                        <img src="/imagenes/imagenNoticia.png" class="rounded-circle" id="imagenCabecera" alt="imagen noticia" width="165">
+
+                        <h1>Modifique aqui </h1>
+                    </div>
+                </header>
+            </div>
+            <div class="card-body">
+                <form th:action="@{/noticia/modificar/__${noticiaLista.id}__}" method="POST" enctype="multipart/form-data"> 
+                    <input hidden th:value="${id}" name="id">
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="validationServer01">Titulo</label>
+                            <input name="titulo" type="text" class="form-control" id="validationServer01" placeholder="Escriba aqui el titulo de la noticia" required>     
+                            <!--  <input type="text" class="form-control is-valid" id="validationServer01" placeholder="Escriba aqui el titulo de la noticia" th:value="${nombreInstituto}" required>   -->               
+                            <div class="invalid-feedback">
+                                Debe escribir un titulo
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationTextarea">Cuerpo</label>
+                            <textarea  name="cuerpo" class="form-control" id="validationTextarea" placeholder="Escriba aqui el cuerpo de la noticia" required></textarea>
+                            <div class="invalid-feedback">
+                                Debe escribir un cuerpo 
+                            </div>
+                        </div>
+                    </div>                   
+                    <br> <div class="mb-3">
+                        <label for="formFile" class="form-label">Imagen </label>
+                        <input class="form-control" name="foto" type="file" id="formFile">
+                    </div>
+                    <select class="form-control" name="alta">
+                        <option th:value="1" >alta</option>
+                        <option th:value="0" >baja</option>
+                    </select>             
+                    <div th:if="${error != null}" class="alert alert-danger" role="alert">
+                        <p class="MensajeError" th:text="${error}"></p>
+                    </div>
+                    <div th:if="${exito != null}" class="alert alert-success" role="alert">
+                        <p class="MensajeExito" th:text="${exito}"></p>
+                        <a class="btn" th:href="@{/noticia/listar}" >Listar </a>
+                    </div>
+                    <button class="btn btn-secondary btn-lg btn-block" type="submit" id="botonEnviar">Actualizar</button>
+                </form>
+            </div>
+        </div>      
+        <div th:replace = "/fragment/boots :: div"></div>
+    </body>
+</html>

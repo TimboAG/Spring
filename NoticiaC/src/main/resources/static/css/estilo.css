@@ -1,0 +1,92 @@
+body{
+    background-image: radial-gradient(circle at 50% -20.71%, #86c3f8 0, #0d8ace 50%, #0056a5 100%);
+    background-size: cover;
+}
+#imagenCabecera{    
+    overflow: hidden;
+    visibility: visible;
+}
+.contenido{
+    text-align:center;
+    margin-bottom: 5%;
+}
+form{
+    margin: 2%;
+}
+#botonEnviar {
+    align-items: center;
+    justify-content: center;
+}
+textarea.form-control {
+    height: calc !important;
+}
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 1.25rem !important;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    padding-bottom: 2%;
+    padding-top:  2%;
+}
+#registroCard{
+    margin: 8%;
+}
+#nav{
+    background-color: #343a4059!important;
+
+}
+.derecha{
+    margin-top: -3%;
+    text-align: right !important;
+    float:right !important;
+}
+#navbarText{
+    margin-top: -0.5%;
+}
+.navbar-collapse {
+    background: #343a4000 !important;
+    text-align: right;
+}
+#navbarText{
+    padding-right: 3%;
+}
+#cardTrue{
+    background-color: #fff;
+    max-width: 30%;
+    color: black;
+    text-align: center;
+    -webkit-box-shadow: 14px 17px 32px -11px rgba(0,0,0,0.57);
+    -moz-box-shadow: 14px 17px 32px -11px rgba(0,0,0,0.57);
+    box-shadow: 14px 17px 32px -11px rgba(0,0,0,0.57);
+}
+#cardFalse{
+    background-color: red !important;
+    max-width: 30%;    
+    color: #fff;
+    -webkit-box-shadow: 14px 17px 32px -11px rgba(0,0,0,0.57);
+    -moz-box-shadow: 14px 17px 32px -11px rgba(0,0,0,0.57);
+    box-shadow: 14px 17px 32px -11px rgba(0,0,0,0.57);
+}
+#links{
+    background-color:  #fff;
+    width: 100%;    
+    text-align: center;
+}
+
+.containerIndex{
+    flex-flow:column;
+}

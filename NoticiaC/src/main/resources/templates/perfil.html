@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaft.or/extras/spring-security">
+    <head th:replace="/fragment/head :: head"> </head>
+    <body sec:authorize="hasRole('ADMIN') or hasRole('USER')">
+        <header th:replace="/fragment/navbar :: header"> </header>
+        <div class="card" style="width: 18rem;" th:each="usuario : ${usuario}">           
+            <img th:src="@{/imagen/perfil/__${session.usuariosession.id}__}" class="card-img-top" alt="archivo" >  
+            <h5 class="card-title" th:text="${usuario.nombre}"></h5>
+            <p class="card-text" th:text="${usuario.email}"></p>
+            <div class="card-body">
+                <a th:href="@{/perfilM}"  class="card-link">Modificar</a>                
+            </div>
+        </div> 
+        <div th:replace = "/fragment/boots :: div"></div>
+    </body>
+</html>
